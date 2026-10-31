@@ -31,8 +31,8 @@
   /* Pulsing markers — big and obvious */
   .pin {
     position: absolute;
-    width: 56px;
-    height: 56px;
+    width: 84px;
+    height: 84px;
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 10;
@@ -41,41 +41,41 @@
   .pin-dot {
     position: absolute;
     top: 50%; left: 50%;
-    width: 22px; height: 22px;
-    margin: -11px 0 0 -11px;
+    width: 34px; height: 34px;
+    margin: -17px 0 0 -17px;
     border-radius: 50%;
-    background: radial-gradient(circle at 40% 35%, #e74c3c, #8b1a1a);
-    border: 3px solid #f0debb;
-    box-shadow: 0 0 12px rgba(192, 57, 43, 0.7), 0 0 4px rgba(0,0,0,0.5);
+    background: radial-gradient(circle at 40% 35%, #ff4136, #a01515);
+    border: 4px solid #f0debb;
+    box-shadow: 0 0 18px rgba(231, 76, 60, 0.8), 0 0 6px rgba(0,0,0,0.5);
     z-index: 3;
     transition: transform 0.3s ease;
   }
 
   .pin.active .pin-dot {
     transform: scale(1.4);
-    box-shadow: 0 0 20px rgba(231, 76, 60, 0.9), 0 0 6px rgba(0,0,0,0.5);
+    box-shadow: 0 0 28px rgba(231, 76, 60, 1), 0 0 8px rgba(0,0,0,0.5);
   }
 
   .pin-ring {
     position: absolute;
     top: 50%; left: 50%;
-    width: 22px; height: 22px;
-    margin: -11px 0 0 -11px;
+    width: 34px; height: 34px;
+    margin: -17px 0 0 -17px;
     border-radius: 50%;
-    border: 2px solid #e74c3c;
+    border: 3px solid #e74c3c;
     opacity: 0;
-    animation: ring 2.2s ease-out infinite;
+    animation: ring 1.8s ease-out infinite;
   }
 
   .pin-ring2 {
     position: absolute;
     top: 50%; left: 50%;
-    width: 22px; height: 22px;
-    margin: -11px 0 0 -11px;
+    width: 34px; height: 34px;
+    margin: -17px 0 0 -17px;
     border-radius: 50%;
-    border: 2px solid #e74c3c;
+    border: 3px solid #e74c3c;
     opacity: 0;
-    animation: ring 2.2s ease-out infinite 0.6s;
+    animation: ring 1.8s ease-out infinite 0.5s;
   }
 
   .pin:nth-child(2) .pin-ring { animation-delay: 0.5s; }
@@ -86,8 +86,8 @@
   .pin:nth-child(4) .pin-ring2 { animation-delay: 2.1s; }
 
   @keyframes ring {
-    0% { transform: scale(1); opacity: 0.7; }
-    100% { transform: scale(3.8); opacity: 0; }
+    0% { transform: scale(1); opacity: 0.85; }
+    100% { transform: scale(4.5); opacity: 0; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -194,29 +194,29 @@
 <div class="map-wrap" id="mapWrap">
   <img src="map.png" alt="The Winter Quest — Pirate's Map" id="mapImg">
 
-  <!-- Pin 1: Zielona Góra -->
-  <div class="pin" style="top: 11.5%; left: 37%;" onclick="showCard(0, this)">
+  <!-- Pin 1: Zielona Góra — centered above banner -->
+  <div class="pin" style="top: 14.5%; left: 48%;" onclick="showCard(0, this)">
     <div class="pin-ring"></div>
     <div class="pin-ring2"></div>
     <div class="pin-dot"></div>
   </div>
 
-  <!-- Pin 2: Kraków -->
-  <div class="pin" style="top: 37%; left: 33%;" onclick="showCard(1, this)">
+  <!-- Pin 2: Kraków — centered above banner -->
+  <div class="pin" style="top: 34%; left: 44%;" onclick="showCard(1, this)">
     <div class="pin-ring"></div>
     <div class="pin-ring2"></div>
     <div class="pin-dot"></div>
   </div>
 
-  <!-- Pin 3: Zakopane -->
-  <div class="pin" style="top: 63%; left: 43%;" onclick="showCard(2, this)">
+  <!-- Pin 3: Zakopane — centered above banner -->
+  <div class="pin" style="top: 59%; left: 46%;" onclick="showCard(2, this)">
     <div class="pin-ring"></div>
     <div class="pin-ring2"></div>
     <div class="pin-dot"></div>
   </div>
 
-  <!-- Pin 4: Morskie Oko -->
-  <div class="pin" style="top: 91%; left: 48%;" onclick="showCard(3, this)">
+  <!-- Pin 4: Morskie Oko — centered above banner -->
+  <div class="pin" style="top: 86%; left: 45%;" onclick="showCard(3, this)">
     <div class="pin-ring"></div>
     <div class="pin-ring2"></div>
     <div class="pin-dot"></div>
