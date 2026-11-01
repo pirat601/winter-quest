@@ -107,10 +107,11 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1.5px solid rgba(184, 134, 11, 0.35);
     border-radius: 10px;
-    padding: 16px 18px;
+    padding: 14px 16px 16px;
     z-index: 20;
     box-shadow: 0 8px 32px rgba(0,0,0,0.6);
     animation: fadeIn 0.25s ease;
+    overflow: hidden;
   }
 
   @keyframes fadeIn {
@@ -153,6 +154,17 @@
     cursor: pointer;
     padding: 4px 6px;
     line-height: 1;
+    z-index: 2;
+  }
+
+  .card-img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 6px;
+    background: #000;
   }
 
   /* Footer */
@@ -227,28 +239,32 @@
     <button class="card-close" onclick="closeCards(event)">&times;</button>
     <div class="card-chapter">Chapter I — Start</div>
     <h3>Zielona Góra</h3>
-    <p>Where every voyage begins. The captain leaves his home port — the city of wine and green hills. Pack your warmest gear, the southern lands are calling.</p>
+    <img class="card-img" src="winter-quest-zielona-gora.png" alt="Ready for adventure">
+    <p>Where every voyage begins. Pack your warmest gear and grab that suitcase — the southern lands are calling.</p>
   </div>
 
   <div class="card" id="card1" style="top: 43%;">
     <button class="card-close" onclick="closeCards(event)">&times;</button>
     <div class="card-chapter">Chapter II — The Dragon's City</div>
     <h3>Kraków</h3>
-    <p>The Wawel dragon guards the gate south. First — a raid on 8a.pl. Ropes, harnesses, chalk, whatever your climbing heart desires. Gear up, the real ascent is ahead.</p>
+    <img class="card-img" src="winter-quest-krakow.png" alt="Dragon and climbing gear">
+    <p>The Wawel dragon guards the gate south. First — a raid on 8a.pl. Gear up, the real ascent is ahead.</p>
   </div>
 
   <div class="card" id="card2" style="top: 69%;">
     <button class="card-close" onclick="closeCards(event)">&times;</button>
     <div class="card-chapter">Chapter III — Hot Springs</div>
     <h3>Zakopane</h3>
-    <p>A wooden cottage in the mountains, smoke from the chimney. Thermal pools under open sky, steam rising against winter peaks. The Tatras in snow are a world of their own.</p>
+    <img class="card-img" src="winter-quest-zakopane.png" alt="Thermal springs">
+    <p>Thermal pools under open sky, steam rising against winter peaks. Soak it all in.</p>
   </div>
 
   <div class="card" id="card3" style="top: 82%;">
     <button class="card-close" onclick="closeCards(event)">&times;</button>
     <div class="card-chapter">Chapter IV — X Marks the Spot</div>
     <h3>Morskie Oko</h3>
-    <p>The most beautiful lake in the Tatras, frozen under snow. 9 km through winter forest — every step worth it. Hot tea at the schronisko, mountains all around. This is where the treasure lies.</p>
+    <img class="card-img" src="winter-quest-morskie-oko.png" alt="Together on the trail">
+    <p>9 km through winter forest, hand in hand. Every step worth it. This is where the treasure lies.</p>
   </div>
 </div>
 
