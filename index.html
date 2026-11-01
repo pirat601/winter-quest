@@ -94,20 +94,20 @@
     .pin-ring, .pin-ring2 { animation: none; }
   }
 
-  /* Info card */
+  /* Info card — illustration left, text right */
   .card {
     display: none;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 86%;
-    max-width: 320px;
+    width: 90%;
+    max-width: 360px;
     background: rgba(26, 18, 8, 0.94);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1.5px solid rgba(184, 134, 11, 0.35);
     border-radius: 10px;
-    padding: 14px 16px 16px;
+    padding: 12px;
     z-index: 20;
     box-shadow: 0 8px 32px rgba(0,0,0,0.6);
     animation: fadeIn 0.25s ease;
@@ -121,50 +121,43 @@
 
   .card.show { display: block; }
 
+  .card-inner {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+
   .card-chapter {
-    font-size: 0.58rem;
+    font-size: 0.55rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #b8860b;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
 
   .card h3 {
     font-family: 'Pirata One', Georgia, serif;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 400;
     color: #f0debb;
-    margin: 0 0 6px;
+    margin: 0 0 5px;
   }
 
   .card p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.45;
     color: #c4a880;
     margin: 0;
   }
 
-  .card-close {
-    position: absolute;
-    top: 6px; right: 10px;
-    background: none;
-    border: none;
-    color: #b8860b;
-    font-size: 1.4rem;
-    cursor: pointer;
-    padding: 4px 6px;
-    line-height: 1;
-    z-index: 2;
-  }
-
   .card-img {
-    width: 100%;
-    max-height: 220px;
+    width: 110px;
+    height: 140px;
     object-fit: contain;
+    object-position: center bottom;
     display: block;
-    margin: 0 auto 10px;
     border-radius: 6px;
-    background: #000;
   }
 
   /* Footer */
@@ -236,35 +229,47 @@
 
   <!-- Cards -->
   <div class="card" id="card0" style="top: 18%;">
-    <button class="card-close" onclick="closeCards(event)">&times;</button>
-    <div class="card-chapter">Chapter I — Start</div>
-    <h3>Zielona Góra</h3>
-    <img class="card-img" src="winter-quest-zielona-gora.png" alt="Ready for adventure">
-    <p>Where every voyage begins. Pack your warmest gear and grab that suitcase — the southern lands are calling.</p>
+    <div class="card-inner">
+      <img class="card-img" src="winter-quest-zielona-gora.png" alt="Ready for adventure">
+      <div>
+        <div class="card-chapter">Chapter I — Start</div>
+        <h3>Zielona Góra</h3>
+        <p>Where every voyage begins. Pack your warmest gear and grab that suitcase — the southern lands are calling.</p>
+      </div>
+    </div>
   </div>
 
   <div class="card" id="card1" style="top: 43%;">
-    <button class="card-close" onclick="closeCards(event)">&times;</button>
-    <div class="card-chapter">Chapter II — The Dragon's City</div>
-    <h3>Kraków</h3>
-    <img class="card-img" src="winter-quest-krakow.png" alt="Dragon and climbing gear">
-    <p>The Wawel dragon guards the gate south. First — a raid on 8a.pl. Gear up, the real ascent is ahead.</p>
+    <div class="card-inner">
+      <img class="card-img" src="winter-quest-krakow.png" alt="Dragon and climbing gear">
+      <div>
+        <div class="card-chapter">Chapter II — The Dragon's City</div>
+        <h3>Kraków</h3>
+        <p>The Wawel dragon guards the gate south. First — a raid on 8a.pl. Gear up, the real ascent is ahead.</p>
+      </div>
+    </div>
   </div>
 
   <div class="card" id="card2" style="top: 69%;">
-    <button class="card-close" onclick="closeCards(event)">&times;</button>
-    <div class="card-chapter">Chapter III — Hot Springs</div>
-    <h3>Zakopane</h3>
-    <img class="card-img" src="winter-quest-zakopane.png" alt="Thermal springs">
-    <p>Thermal pools under open sky, steam rising against winter peaks. Soak it all in.</p>
+    <div class="card-inner">
+      <img class="card-img" src="winter-quest-zakopane.png" alt="Thermal springs">
+      <div>
+        <div class="card-chapter">Chapter III — Hot Springs</div>
+        <h3>Zakopane</h3>
+        <p>Thermal pools under open sky, steam rising against winter peaks. Soak it all in.</p>
+      </div>
+    </div>
   </div>
 
   <div class="card" id="card3" style="top: 82%;">
-    <button class="card-close" onclick="closeCards(event)">&times;</button>
-    <div class="card-chapter">Chapter IV — X Marks the Spot</div>
-    <h3>Morskie Oko</h3>
-    <img class="card-img" src="winter-quest-morskie-oko.png" alt="Together on the trail">
-    <p>9 km through winter forest, hand in hand. Every step worth it. This is where the treasure lies.</p>
+    <div class="card-inner">
+      <img class="card-img" src="winter-quest-morskie-oko.png" alt="Together on the trail">
+      <div>
+        <div class="card-chapter">Chapter IV — X Marks the Spot</div>
+        <h3>Morskie Oko</h3>
+        <p>9 km through winter forest, hand in hand. Every step worth it. This is where the treasure lies.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -276,8 +281,11 @@
 
 <script>
 function showCard(idx, pinEl) {
+  if (pinEl.classList.contains('active')) {
+    closeCards();
+    return;
+  }
   closeCards();
-  document.querySelectorAll('.pin').forEach(function(p) { p.classList.remove('active'); });
   pinEl.classList.add('active');
   var card = document.getElementById('card' + idx);
   card.classList.add('show');
