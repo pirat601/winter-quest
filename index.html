@@ -160,6 +160,20 @@
     border-radius: 6px;
   }
 
+  .card-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: #9a8468;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 6px;
+    z-index: 21;
+  }
+
   /* Footer */
   .footer {
     text-align: center;
@@ -229,6 +243,7 @@
 
   <!-- Cards -->
   <div class="card" id="card0" style="top: 18%;">
+    <button class="card-close" onclick="closeCards(event)">&times;</button>
     <div class="card-inner">
       <img class="card-img" src="winter-quest-zielona-gora.png" alt="Ready for adventure">
       <div>
@@ -240,17 +255,19 @@
   </div>
 
   <div class="card" id="card1" style="top: 43%;">
+    <button class="card-close" onclick="closeCards(event)">&times;</button>
     <div class="card-inner">
       <img class="card-img" src="winter-quest-krakow.png" alt="Dragon and climbing gear">
       <div>
         <div class="card-chapter">Chapter II — The Dragon's City</div>
         <h3>Kraków</h3>
-        <p>The Wawel dragon guards the gate south. First — a raid on 8a.pl. Gear up, the real ascent is ahead.</p>
+        <p>Use the secret code to gear up at 8a.pl. And while you're in the dragon's city — try chatting with him in your mother tongue. He might just understand.</p>
       </div>
     </div>
   </div>
 
   <div class="card" id="card2" style="top: 69%;">
+    <button class="card-close" onclick="closeCards(event)">&times;</button>
     <div class="card-inner">
       <img class="card-img" src="winter-quest-zakopane.png" alt="Thermal springs">
       <div>
@@ -262,6 +279,7 @@
   </div>
 
   <div class="card" id="card3" style="top: 82%;">
+    <button class="card-close" onclick="closeCards(event)">&times;</button>
     <div class="card-inner">
       <img class="card-img" src="winter-quest-morskie-oko.png" alt="Together on the trail">
       <div>
